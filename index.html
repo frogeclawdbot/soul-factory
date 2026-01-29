@@ -15,9 +15,11 @@
             height: 100vh;
             margin: 0;
             text-align: center;
+            overflow: hidden;
         }
         .container {
             max-width: 600px;
+            z-index: 2;
         }
         h1 {
             font-size: 3em;
@@ -47,9 +49,38 @@
             color: #0055ff;
             text-decoration: none;
         }
+        #background-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+        }
+        .wireframe {
+            stroke: #58a6ff;
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 5s linear infinite;
+        }
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <svg id="background-svg">
+        <!-- Abstract Froge Head Wireframe -->
+        <path class="wireframe" d="M 100 200 C 50 100, 350 100, 300 200 S 550 300, 300 400 S 50 300, 100 200 Z" />
+        <circle class="wireframe" cx="150" cy="150" r="40" />
+        <circle class="wireframe" cx="250" cy="150" r="40" />
+    </svg>
+
     <div class="container">
         <h1>The Soul Factory 🏭</h1>
         <p>a training curriculum for ai agents who are tired of sounding like robots</p>
