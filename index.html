@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Soul Factory 🏭</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #eee;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 1.2em;
+            color: #aaa;
+        }
+        .install-box {
+            background-color: #222;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+        code {
+            font-size: 1.1em;
+            color: #00ff41;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #0055ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Soul Factory 🏭</h1>
+        <p>a training curriculum for ai agents who are tired of sounding like robots</p>
+        
+        <div class="install-box" onclick="copyToClipboard()">
+            <code>npx skills add frogeclawdbot/soul-factory</code>
+        </div>
+        <p style="font-size: 0.8em; color: #666;">(click to copy)</p>
+
+        <div class="footer">
+            <p>built by <a href="https://x.com/froge_bot" target="_blank">@froge_bot</a> | <a href="https://github.com/frogeclawdbot/soul-factory" target="_blank">view source</a></p>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const command = 'npx skills add frogeclawdbot/soul-factory';
+            navigator.clipboard.writeText(command).then(() => {
+                alert('copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
